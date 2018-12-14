@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JAr-vk-b27">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimatedMapDirection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOZ-sf-DWq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night Vision" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-gU-4nq">
+                                <rect key="frame" x="293" y="81" width="75.5" height="13"/>
+                                <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kvq-63-4vO">
+                                <rect key="frame" x="306" y="40" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showHideNightVision:" destination="BYZ-38-t0r" eventType="valueChanged" id="UjU-0L-4wd"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gbv-gU-4nq" firstAttribute="centerX" secondItem="kvq-63-4vO" secondAttribute="centerX" id="KeY-Rd-jax"/>
+                            <constraint firstItem="IOZ-sf-DWq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QaY-w0-w5Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IOZ-sf-DWq" secondAttribute="bottom" id="efu-Ol-jIF"/>
+                            <constraint firstItem="kvq-63-4vO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jMK-Dz-XNr"/>
+                            <constraint firstItem="gbv-gU-4nq" firstAttribute="top" secondItem="kvq-63-4vO" secondAttribute="bottom" constant="10" id="m67-c3-TdM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvq-63-4vO" secondAttribute="trailing" constant="20" id="wBe-CG-7MU"/>
+                            <constraint firstItem="IOZ-sf-DWq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x96-xg-ybf"/>
+                            <constraint firstItem="IOZ-sf-DWq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1n-X8-Lgp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q7u-pb-oW1"/>
+                    <connections>
+                        <outlet property="myMapView" destination="IOZ-sf-DWq" id="kGm-Ro-PZb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775.20000000000005" y="-22.03898050974513"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CCv-dx-JvB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JAr-vk-b27" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qXM-a5-ZgH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xJ4-RQ-TGL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvq-Ny-vBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164" y="-22.03898050974513"/>
+        </scene>
+    </scenes>
+</document>
